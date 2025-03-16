@@ -1,5 +1,7 @@
+import starImg from "./assets/Star_fill.svg"
+import noStarImg from "./assets/Star.svg"
+
 export function Card({ coffee }) {
-  console.log(coffee)
   return (
     <div style={{position: "relative"}}>
       {coffee.popular ? <p className="popular-tag">Popular</p> : null}
@@ -9,7 +11,7 @@ export function Card({ coffee }) {
         <p className="coffee-price">{coffee.price}</p>
       </div>
       <div className="rating">
-        <img style={{width: '20px'}} src={coffee.rating ? "/src/assets/Star_fill.svg" : "src/assets/Star.svg"}></img>
+        <img style={{width: '20px'}} src={coffee.rating ? starImg : noStarImg}></img>
         <p>{coffee.rating}</p>
         <p className="votes">{coffee.rating ? `(${coffee.votes} votes)` : "No ratings"}</p>
         <p className="sold-out">{coffee.available ? "" : "Sold out"}</p>
